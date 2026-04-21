@@ -39,12 +39,9 @@ rijndael-haskell/.stack-work/
 rijndael-haskell/dist/
 rijndael-haskell/dist-newstyle/
 
-# C# / Mono binaries
-rijndael-csharp/generate-key
-rijndael-csharp/rijndael-mono-encrypt
-rijndael-csharp/rijndael-mono-decrypt
-rijndael-csharp/bin/
-rijndael-csharp/obj/
+# C# / Mono build artifacts
+rijndael-csharp/**/bin/
+rijndael-csharp/**/obj/
 
 # Groovy / Gradle
 rijndael-groovy/*.class
