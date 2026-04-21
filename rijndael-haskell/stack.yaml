@@ -1,0 +1,5 @@
+resolver: lts-19.33
+compiler: ghc-9.2.6
+extra-deps:
+  - memory-0.18.0
+  - crypton-0.34

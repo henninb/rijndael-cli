@@ -1,0 +1,41 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           rijndael-haskell
+version:        0.1.0.0
+build-type:     Simple
+
+executable rijndael-decrypt
+  main-is: Main.hs
+  other-modules:
+      Paths_rijndael_haskell
+  hs-source-dirs:
+      app/rijndael-decrypt
+  ghc-options: -O2 -Wall
+  build-depends:
+      base >=4.7 && <5
+    , base16-bytestring
+    , bytestring
+    , crypton
+    , directory
+    , memory
+  default-language: Haskell2010
+
+executable rijndael-encrypt
+  main-is: Main.hs
+  other-modules:
+      Paths_rijndael_haskell
+  hs-source-dirs:
+      app/rijndael-encrypt
+  ghc-options: -O2 -Wall
+  build-depends:
+      base >=4.7 && <5
+    , base16-bytestring
+    , bytestring
+    , crypton
+    , directory
+    , memory
+  default-language: Haskell2010

@@ -1,0 +1,19 @@
+[package]
+name = "rijndael-rust"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rijndael-encrypt"
+path = "src/bin/rijndael-encrypt.rs"
+
+[[bin]]
+name = "rijndael-decrypt"
+path = "src/bin/rijndael-decrypt.rs"
+
+[dependencies]
+aes = "0.8"
+cbc = { version = "0.1", features = ["std"] }
+hex = "0.4"
+hmac = "0.12"
+sha2 = "0.10"

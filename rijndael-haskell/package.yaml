@@ -1,0 +1,21 @@
+name: rijndael-haskell
+version: 0.1.0.0
+
+dependencies:
+  - base >= 4.7 && < 5
+  - bytestring
+  - crypton
+  - memory
+  - base16-bytestring
+  - directory
+
+executables:
+  rijndael-encrypt:
+    main: Main.hs
+    source-dirs: app/rijndael-encrypt
+    ghc-options: [-O2, -Wall]
+
+  rijndael-decrypt:
+    main: Main.hs
+    source-dirs: app/rijndael-decrypt
+    ghc-options: [-O2, -Wall]

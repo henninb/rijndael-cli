@@ -1,0 +1,48 @@
+# Test input/key files (potentially sensitive)
+input.iv
+input.key
+input.txt
+
+# C
+rijndael-c/*.o
+rijndael-c/rijndael-encrypt
+rijndael-c/rijndael-decrypt
+
+# Go binaries
+rijndael-go/rijndael-encrypt
+rijndael-go/rijndael-decrypt
+
+# Rust
+rijndael-rust/target/
+
+# Python
+rijndael-python/__pycache__/
+rijndael-python/*.pyc
+rijndael-python/*.pyo
+rijndael-python/.venv/
+rijndael-python/venv/
+
+# Java
+rijndael-java/*.class
+rijndael-java/*.jar
+
+# Haskell (Stack)
+rijndael-haskell/.stack-work/
+rijndael-haskell/dist/
+rijndael-haskell/dist-newstyle/
+
+# C# / Mono binaries
+rijndael-csharp/generate-key
+rijndael-csharp/rijndael-mono-encrypt
+rijndael-csharp/rijndael-mono-decrypt
+rijndael-csharp/bin/
+rijndael-csharp/obj/
+
+# Groovy / Gradle
+rijndael-groovy/*.class
+rijndael-groovy/.gradle/
+rijndael-groovy/build/
+
+# OS
+.DS_Store
+Thumbs.db
