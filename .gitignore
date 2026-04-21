@@ -19,6 +19,7 @@ dotnet-build/
 
 # C
 rijndael-c/*.o
+test_rijndael_c
 
 
 # Rust

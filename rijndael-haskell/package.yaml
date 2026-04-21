@@ -19,3 +19,13 @@ executables:
     main: Main.hs
     source-dirs: app/rijndael-decrypt
     ghc-options: [-O2, -Wall]
+
+tests:
+  rijndael-haskell-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options: [-Wall]
+    dependencies:
+      - hspec
+      - process
+      - temporary

@@ -39,3 +39,23 @@ executable rijndael-encrypt
     , directory
     , memory
   default-language: Haskell2010
+
+test-suite rijndael-haskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_rijndael_haskell
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      base >=4.7 && <5
+    , base16-bytestring
+    , bytestring
+    , crypton
+    , directory
+    , hspec
+    , memory
+    , process
+    , temporary
+  default-language: Haskell2010
