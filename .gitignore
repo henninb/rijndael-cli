@@ -3,10 +3,22 @@ input.iv
 input.key
 input.txt
 
+# Build outputs (root-level executables)
+*.exe
+*.jar
+
+# Ciphertext and signature outputs
+*.rij
+*.sig
+
+# Decrypted plaintext outputs
+plain-*.txt
+
+# dotnet publish output
+dotnet-build/
+
 # C
 rijndael-c/*.o
-rijndael-c/rijndael-encrypt
-rijndael-c/rijndael-decrypt
 
 # Go binaries
 rijndael-go/rijndael-encrypt
@@ -24,7 +36,6 @@ rijndael-python/venv/
 
 # Java
 rijndael-java/*.class
-rijndael-java/*.jar
 
 # Haskell (Stack)
 rijndael-haskell/.stack-work/

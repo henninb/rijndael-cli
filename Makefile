@@ -6,6 +6,12 @@ linux:
 	@rm -rf *.exe
 	@gcc rijndael-c/rijndael-alg-fst.c rijndael-c/rijndael-api-fst.c rijndael-c/rijndael-encrypt.c -o rijndael-encrypt.exe -Irijndael-c $(LIBS) -O2 -Wall -lssl -lcrypto
 	@gcc rijndael-c/rijndael-alg-fst.c rijndael-c/rijndael-api-fst.c rijndael-c/rijndael-decrypt.c -o rijndael-decrypt.exe -Irijndael-c $(LIBS) -O2 -Wall -lssl -lcrypto
+	@gcc -c rijndael-c/rijndael-alg-fst.c -o /tmp/rijndael-alg-fst.o -Irijndael-c -O2
+	@gcc -c rijndael-c/rijndael-api-fst.c -o /tmp/rijndael-api-fst.o -Irijndael-c -O2
+	@nasm -f elf64 rijndael-nasm/rijndael-encrypt.asm -o /tmp/rijndael-encrypt-nasm.o
+	@gcc -no-pie -o rijndael-encrypt-nasm.exe /tmp/rijndael-encrypt-nasm.o /tmp/rijndael-alg-fst.o /tmp/rijndael-api-fst.o -lssl -lcrypto
+	@nasm -f elf64 rijndael-nasm/rijndael-decrypt.asm -o /tmp/rijndael-decrypt-nasm.o
+	@gcc -no-pie -o rijndael-decrypt-nasm.exe /tmp/rijndael-decrypt-nasm.o /tmp/rijndael-alg-fst.o /tmp/rijndael-api-fst.o -lssl -lcrypto
 	@cd rijndael-java && javac RijndaelEncrypt.java && jar cmf RijndaelEncrypt.mf ../RijndaelEncrypt.jar RijndaelEncrypt.class && rm -f *.class
 	@cd rijndael-java && javac RijndaelDecrypt.java && jar cmf RijndaelDecrypt.mf ../RijndaelDecrypt.jar RijndaelDecrypt.class && rm -f *.class
 	@pip install -q -r rijndael-python/requirements.txt

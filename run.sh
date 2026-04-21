@@ -22,6 +22,7 @@ java -jar RijndaelEncrypt.jar input.txt output.java.txt.rij input.key input.iv
 ./rijndael-encrypt-go.exe input.txt output-go.txt.rij input.key input.iv
 ./rijndael-encrypt-haskell.exe input.txt output-haskell.txt.rij input.key input.iv
 groovy rijndael-groovy/rijndael-encrypt.groovy input.txt output-groovy.txt.rij input.key input.iv
+./rijndael-encrypt-nasm.exe input.txt output-nasm.txt.rij input.key input.iv
 
 ./rijndael-decrypt.exe output.txt.rij plain-c.txt input.key input.iv
 ./rijndael-mono-decrypt.exe output-mono.txt.rij plain-mono.txt input.key input.iv
@@ -31,6 +32,7 @@ java -jar RijndaelDecrypt.jar output.java.txt.rij plain-java.txt input.key input
 ./rijndael-decrypt-go.exe output-go.txt.rij plain-go.txt input.key input.iv
 ./rijndael-decrypt-haskell.exe output-haskell.txt.rij plain-haskell.txt input.key input.iv
 groovy rijndael-groovy/rijndael-decrypt.groovy output-groovy.txt.rij plain-groovy.txt input.key input.iv
+./rijndael-decrypt-nasm.exe output-nasm.txt.rij plain-nasm.txt input.key input.iv
 
 verify() {
     label="$1"
@@ -54,6 +56,7 @@ verify "python" plain-python.txt "$plain_ref"
 verify "rust"   plain-rust.txt      "$plain_ref"
 verify "haskell" plain-haskell.txt  "$plain_ref"
 verify "groovy"  plain-groovy.txt   "$plain_ref"
+verify "nasm"    plain-nasm.txt     "$plain_ref"
 
 rij_ref=$(sha256sum output.txt.rij | cut -d' ' -f1)
 printf "\n--- ciphertext verification (ref: output.txt.rij) ---\n"
@@ -66,6 +69,7 @@ verify "python" output-python.txt.rij "$rij_ref"
 verify "rust"    output-rust.txt.rij    "$rij_ref"
 verify "haskell" output-haskell.txt.rij "$rij_ref"
 verify "groovy"  output-groovy.txt.rij  "$rij_ref"
+verify "nasm"    output-nasm.txt.rij    "$rij_ref"
 
 key_hex=$(cat input.key)
 
@@ -89,5 +93,6 @@ verify_sig "rust"    output-rust.txt.rij
 verify_sig "haskell" output-haskell.txt.rij
 verify_sig "mono"    output-mono.txt.rij
 verify_sig "groovy"  output-groovy.txt.rij
+verify_sig "nasm"    output-nasm.txt.rij
 
 exit 0
