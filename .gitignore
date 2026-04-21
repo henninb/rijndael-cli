@@ -20,9 +20,6 @@ dotnet-build/
 # C
 rijndael-c/*.o
 
-# Go binaries
-rijndael-go/rijndael-encrypt
-rijndael-go/rijndael-decrypt
 
 # Rust
 rijndael-rust/target/
